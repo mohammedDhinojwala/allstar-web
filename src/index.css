@@ -1,0 +1,160 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+  font-family: 'kalice';
+  src: url('./assets/fonts/Kalice.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'kalic-italic';
+  src: url('./assets/fonts/Kalice-Italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'poppins';
+  src: url('./assets/fonts/Poppins-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'suisse';
+  src: url('./assets/fonts/SuisseIntl-Regular.woff2') format('woff2');
+  font-weight: bolder;
+  font-style: normal;
+}
+
+.nav-main {
+  font-family: 'suisse';
+  font-weight:500;
+}
+
+.herotext-main{
+  font-family: kalice;
+}
+
+.herotext-3,.herotext-6{
+  font-family:kalic-italic;
+}
+
+.project-index{
+ font-family: 'suisse';
+ font-size: 0.8rem;
+  font-weight:700;
+
+}
+
+
+.project-index-name{
+  font-family: 'kalice';
+ font-size: 1.2rem;
+  font-weight:500;
+
+}
+
+.project-service{
+  font-family: 'suisse';
+ font-size: 0.7rem;
+
+}
+
+.whoAmIQue{
+ 
+   font-family: 'suisse';
+ font-size: 0.8rem;
+  
+}
+
+.WhoAmITextBox {
+ 
+   font-family: 'kalic';
+ font-size: 0.1rem;
+  font-weight:500;
+}
+
+.whatIDo-indiv-heading{
+font-family: 'kalice';
+font-weight: 100;
+ font-size: 2rem;
+
+}
+
+.project-year{
+  font-family: 'suisse';
+
+}
+
+
+.project-heading{
+  font-family: "kalice";
+  
+}
+
+.project-discription{
+  font-family: 'poppins';
+}
+
+.letswork1,.letswork3{
+  font-family: kalice;
+  font-size: 1.2rem;
+}
+
+.letswork2{
+  font-family: kalic-italic;
+  font-size: 1.2rem;
+
+}
+
+.emailBox , .onlineLinks{
+   font-family: poppins;
+  font-size: 0.9rem;
+}
+.iamemail, .iampno ,.iaminsta ,.iamlinked{
+  font-size: 0.7rem;
+}
+
+.watermark{
+  font-family: kalic-italic;
+}
+
+.legal , .y2025 {
+  font-family: kalice;
+
+}
+
+.foothead {
+  font-family: kalic-italic;
+}
+
+.horizontal-image-section{
+  height: 100vh;
+              width: 100vw;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              scroll-snap-align: start;
+              flex-shrink: 0;
+}
+
+@media (min-width: 1024px) {
+  .horizontal-image-section {
+   height: 100vh;
+              width: 50vw;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              scroll-snap-align: start;
+              flex-shrink: 0;
+  }
+}
+
+.p1{
+  background-color: rebeccapurple;
+}
