@@ -133,6 +133,42 @@ font-weight: 100;
   font-family: kalic-italic;
 }
 
+/* tampaFlorida - css  */
+
+.h1-hero-heading{
+  font-family: kalice;
+  font-size: 4.2rem;
+  
+
+
+}
+
+.hero-left-text, .hero-right-text{
+  font-family: suisse;
+  font-size:0.7rem;
+
+
+}
+
+
+
+.hero-description{
+  font-family: kalic-italic;
+  font-size: 1.5rem;
+
+
+}
+
+.hero-button-get-in-touch{
+  font-family: kalice;
+  font-size: 1rem;
+}
+
+.ourProcess-heading{
+
+  font-family: suisse;
+}
+
 .horizontal-image-section{
   height: 100vh;
               width: 100vw;

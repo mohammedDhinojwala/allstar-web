@@ -12,6 +12,8 @@ import Contacts from './components/Contacts';
 import Home from './components/Home';
 import Planetglass from './components/projects/Planetglass';
 import MusicPlayer from './components/MusicPlayer';
+import TempaFlorida from './components/locations/TempaFlorida';
+import Practise from './components/locations/Practise';
 
 const PageLayout = () => (
   <>
@@ -23,6 +25,7 @@ const PageLayout = () => (
 
 const HomeLayout = () => (
   <>
+    <Navbar />
     <Home />
     <Footer />
   </>
@@ -62,6 +65,8 @@ function App() {
         { path: '/about', element: <About /> },
         { path: '/contacts', element: <Contacts /> },
         { path: '/planetglass', element: <Planetglass /> },
+        { path: '/tempa-florida', element: <TempaFlorida /> }, // Added this route
+        { path: '/practise', element: <Practise /> }, // Also added Practise if needed
       ],
     },
   ]);
