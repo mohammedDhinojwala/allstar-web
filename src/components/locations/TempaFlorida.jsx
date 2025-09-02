@@ -33,6 +33,31 @@ gsap.registerPlugin(ScrollTrigger);
 
  function TempaFlorida() {
 
+  // mobile service page drag to scroll code 👇
+ const sliderRef = useRef(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
+
+  const handleMouseDown = (e) => {
+    setIsDragging(true);
+    setStartX(e.pageX - sliderRef.current.offsetLeft);
+    setScrollLeft(sliderRef.current.scrollLeft);
+  };
+
+  const handleMouseLeave = () => setIsDragging(false);
+  const handleMouseUp = () => setIsDragging(false);
+
+  const handleMouseMove = (e) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const x = e.pageX - sliderRef.current.offsetLeft;
+    const walk = (x - startX) * 2; // Drag sensitivity
+    sliderRef.current.scrollLeft = scrollLeft - walk;
+  };
+
+
+
   // this is a why choose us animation for the text its going to be word by word animation
 
   const heading = "why choose us?";
@@ -348,34 +373,39 @@ useEffect(() => {
     ]
 
   return (
-    <div className='tempaFloridaBody m-0 p-0 box-border'>
+    <div className='tempaFloridaBody m-0 p-0 box-border '>
         
-       <div className="heroPage-tempaFlorida">
-      <div className="h1-hero-heading w-[100vw] h-[25vh] !mt-5 flex justify-center items-center text-center">
+       <div className="heroPage-tempaFlorida ">
+      <div className="h1-hero-heading w-[100vw] h-[15vh] !mt-0 flex justify-center items-center text-center text-[2rem]
+      lg:!w-[100vw] lg:!h-[25vh] lg:!mt-5 lg:!flex lg:!justify-center lg:!items-center lg:!text-center  lg:!text-[4rem]">
         <h1 ref={headingRef}>
           The Best Website Development Company In Tampa, Florida
         </h1>
       </div>
 
-      <div className="hero-photo-text flex justify-around items-center !mt-5">
+      <div className="hero-photo-text flex flex-col justify-between items-center !mt-5 gap-0
+      lg:!flex lg:!flex-row  lg:!items-center lg:!mt-5 lg:!gap-0">
         <div
-          className="hero-left-text h-[5vh] w-[25vw] !ml-18 flex items-center justify-between"
+          className="hero-left-text h-[5vh] w-[60vw] !ml-2 flex items-center justify-between   text-[0.6rem]
+          lg:!h-[5vh] lg:!w-[25vw] lg:!ml-18 lg:!flex lg:!items-center lg:!justify-between lg:!text-[0.7rem] "
           ref={leftTextRef}
         >
           <p>Web development</p>
           <p>Web design</p>
         </div>
 
-        <div className="hero-main-photo h-[29vh] w-[32vw] bg-[#620505] relative overflow-hidden">
-      <img src={heroImg} alt="hero" className="w-full h-full object-cover" />
+        <div className="hero-main-photo !h-[30vh] !w-[60vw]  !relative !overflow-hidden !rounded-3xl flex justify-center items-center
+        lg:!h-[30vh] lg:!w-[28vw]  lg:!relative lg:!overflow-hidden">
+      <img src={heroImg} alt="hero" className="" />
       <div
         ref={overlayRef}
-        className="hero-main-photo-animation h-[29vh] w-[32vw] bg-green-500 absolute top-0 left-0"
+        className="hero-main-photo-animation h-[29vh] w-[32vw]  absolute top-0 left-0"
       ></div>
     </div>
 
         <div
-          className="hero-right-text h-[5vh] w-[25vw] !mr-18 flex items-center justify-between"
+          className="hero-right-text h-[5vh] w-[60vw] !mr-2 flex items-center justify-between  text-[0.6rem] 
+          lg:!h-[5vh] lg:!w-[25vw] lg:!mr-18 lg:!flex lg:!items-center lg:!justify-between lg:!text-[0.7rem] "
           ref={rightTextRef}
         >
           <p>Search engine Optimize</p>
@@ -383,13 +413,15 @@ useEffect(() => {
         </div>
       </div>
 
-      <div className="hero-description w-[100vw] !mt-7 " >
-        <p className="hero-desc !px-40 text-center text-[1.2rem]" ref={descRef}>
+      <div className="hero-description w-[100vw] !mt-7 text-center
+      lg:!w-[100vw] lg:!mt-7  " >
+        <p className="hero-desc !px-5 text-center text-[0.75rem]
+        lg:!px-40 lg:!text-center lg:!text-[1.2rem]" ref={descRef}>
           Looking for the best web design, website development, and SEO agency in tempa, florida? we help local businesses grow online with stunning, responsive websites and data-driven SEO strategies that drive real results. From concept to launch, our expert team delivers modern, mobile-friendly website built to attract customer, increase visibility, and boost revenue. whether you're a small business or an established brand,  we provide custom solutions tailored to your goals, combining creativity, technology, and proven marketing strategies. With our Tempa-based web development & SEO service, you'll not only get a website that looks amazing but one that rank higher on google and converts visitor into customers.
         </p>
       </div>
 
-      <div className="hero-button flex justify-center !mt-7">
+      <div className="hero-button flex justify-center !mt-7 ">
         <button
           className="hero-button-get-in-touch !px-12 !py-1 rounded-full flex justify-center items-center !bg-[#183109] !text-white"
           ref={buttonRef}
@@ -400,20 +432,24 @@ useEffect(() => {
     </div>
 
 
-        <div className="servicePage-tempaFlorida h-[210vh] w-[100vw]  relative flex flex-col items-center !mt-10"
+        <div className="servicePage-tempaFlorida h-[100vh] w-[100vw]  relative flex flex-col items-center !mt-10 bg-red-800
+        lg:!h-[210vh] lg:!w-[100vw]  lg:!relative lg:!flex lg:!flex-col lg:!items-center lg:!mt-10 lg:!bg-red-800"
       style={{
         perspective: "1000px",
         perspectiveOrigin: "50% 50%",
       }}
     >
       {/* HEADER */}
-    <div className="servicePage-header h-[80vh] w-[100vw] flex flex-col justify-start items-center !pt-32">
-      <h1 ref={headerRef} className="!text-[7rem] text-center !font-semibold">
+    <div className="servicePage-header h-[40vh] w-[100vw] flex flex-col justify-start items-start !pt-25 bg-amber-900 !pl-5
+    lg:!h-[80vh] lg:!w-[100vw] lg:!flex lg:!flex-col lg:!justify-start lg:!items-center lg:!bg-amber-200">
+      <h1 ref={headerRef} className="!text-[3rem] text-start !font-semibold
+      lg:!text-[7rem] lg:!text-center lg:!font-semibold">
         Find the service you need
       </h1>
 
       {/* Paragraph: NO animation — left untouched */}
-      <p className="text-md w-[35%] justify-self-end !pt-15">
+      <p className="text-md w-[9  5%] text-center justify-self-center !pt-10
+      lg:!text-md lg:!w-[35%] lg:!justify-self-end lg:pt-15">
        It doesn't matter whether you know where to start or not, we will always point you in the right direction.
       </p>
     </div>
@@ -434,7 +470,7 @@ useEffect(() => {
         return (
           <div
             key={service.id}
-            className={`h-[70vh] w-[99.9vw] ${service.color} flex flex-col justify-start items-center absolute transition-all duration-500`}
+            className={`h-[70vh] w-[99.9vw] ${service.color} hidden lg:!flex lg:!flex-col lg:!justify-start lg:!items-center lg:!absolute lg:!transition-all lg:!duration-500`}
             style={{
               top: `${topVh}vh`,
               transform: parentTransform,
@@ -450,7 +486,8 @@ useEffect(() => {
           >
             {/* inner wrapper: counter-rotate so text remains flat */}
             <div
-              className="w-full h-full flex flex-col items-center px-8"
+              className="w-full h-full flex flex-col items-center justify-start bg-pink-400
+              lg:!w-full lg:!h-full lg:!flex lg:!flex-col lg:!items-center  lg:!bg-green-400"
               style={{
                 transform: childTransform,
                 transformOrigin: "top center",
@@ -461,7 +498,7 @@ useEffect(() => {
                 // transform: `${childTransform} translateZ(0.1px)`,
               }}
             >
-              <h1 className="!text-[10rem] text-center !font-semibold select-none mt-6">
+              <h1 className="!text-[10rem] text-center !font-semibold select-none mt-6 ">
                 {service.title}
               </h1>
 
@@ -476,22 +513,91 @@ useEffect(() => {
           </div>
         );
       })}
+
+
+
+{/*service for the mobile   */}
+
+   <div
+      className="servicePage-mobile-tempaFlorida min-w-[100%] h-[100%] bg-amber-50 !my-2 !mx-2 flex overflow-x-scroll md:!hidden"
+      ref={sliderRef}
+      onMouseDown={handleMouseDown}
+      onMouseLeave={handleMouseLeave}
+      onMouseUp={handleMouseUp}
+      onMouseMove={handleMouseMove}
+    >
+      {/* Service Box 1 */}
+      <div className="serviceBox1 bg-pink-200 w-[55%] h-[65%] !mt-10 !ml-5 !p-1 flex-shrink-0">
+        <div className="serviceBox-header w-[100%] h-[45%] !py-5 !px-3">
+          <h1 className="text-white text-[3rem] leading-13 font-extrabold">Brand Strategy</h1>
+        </div>
+        <div className="serviceBox-desc-link w-[100%] h-[55%] !pt-20 !pl-3">
+          <div className="serviveBox-desc text-[0.9rem]">
+            <p>We know how to show your audience the greatness of your idea.</p>
+          </div>
+          <div className="serviveBox-link !mt-3 text-[1.5rem]">
+            <button className="underline">↪ More Info</button>
+          </div>
+        </div>
+      </div>
+
+      {/* Service Box 2 */}
+      <div className="serviceBox1 bg-pink-200 w-[55%] h-[65%] !mt-10 !ml-5 !p-1 flex-shrink-0">
+        <div className="serviceBox-header w-[100%] h-[45%] !py-5 !px-3">
+          <h1 className="text-white text-[3rem] leading-13 font-extrabold">Art-direction & Consulting</h1>
+        </div>
+        <div className="serviceBox-desc-link w-[100%] h-[55%] !pt-20 !pl-3">
+          <div className="serviveBox-desc text-[0.9rem]">
+            <p>Brainstorming is one of our superpowers — anytime, any detail.</p>
+          </div>
+          <div className="serviveBox-link !mt-3 text-[1.5rem]">
+            <button className="underline">↪ More Info</button>
+          </div>
+        </div>
+      </div>
+
+      {/* Service Box 3 */}
+      <div className="serviceBox1 bg-pink-200 w-[70%] h-[65%] !mt-10 !ml-5 !p-1 flex-shrink-0">
+        <div className="serviceBox-header w-[100%] h-[45%] !py-5 !px-3">
+          <h1 className="text-white text-[3rem] leading-13 font-extrabold">Logo & Brand Identity</h1>
+        </div>
+        <div className="serviceBox-desc-link w-[100%] h-[55%] !pt-20 !pl-3">
+          <div className="serviveBox-desc text-[0.9rem]">
+            <p>We will create a visual identity that represents your brand perfectly.</p>
+          </div>
+          <div className="serviveBox-link !mt-3 text-[1.5rem]">
+            <button className="underline">↪ More Info</button>
+          </div>
+        </div>
+      </div>
     </div>
+
+
+    </div>
+
+    
+
+
          
-          <div className="ourProcessPage-tempaFlorida w-[100vw] h-[100vh] !mt-10 !pt-10">
+          <div className="ourProcessPage-tempaFlorida w-[100vw] h-[100vh] !mt-10 !pt-10 
+          lg:!w-[100vw] lg:!h-[100vh] lg:!mt-10 lg:!pt-10">
   {/* Heading */}
-  <div className="ourProcess-heading w-[100vw] h-[20vh] text-6xl font-semibold !pl-23">
+  <div className="ourProcess-heading w-[90vw] h-[20vh] text-[2.5rem] font-semibold !pl-5 leading-14
+  lg:!w-[100vw] lg:!h-[20vh] lg:!text-6xl lg:!font-semibold lg:!pl-23 lg:!leading-none">
  your journey to <br />
 "Peak Performance"
 </div>
 
   {/* Navbar */}
-  <div className="ourProcess-navbar w-[100vw] h-[12vh] !pl-23 flex items-center ">
-    <div className="process-nav w-[60vw] h-[6vh] rounded-4xl border-2 flex justify-around items-center">
-      {["Discovery", "Design & dev", "Full Cycle Testing", "Implementation","Maintanace"].map((name, idx) => (
+  <div className="ourProcess-navbar w-[100vw] h-[13vh] !pl-5 flex items-center  
+  lg:!w-[100vw] lg:!h-[12vh] lg:!pl-23 lg:!flex lg:!items-center">
+    <div className="process-nav w-[95vw] h-[5.5vh] rounded-4xl border-2 flex justify-around items-center overflow-hidden gap-5
+    lg:!w-[60vw] lg:!h-[6vh] lg:!rounded-4xl lg:!border-2 lg:!flex lg:!justify-around lg:!items-center lg:!gap-0">
+      {["Discovery", "Design", "Testing", "Implementation","Maintanace"].map((name, idx) => (
         <div
           key={idx}
-          className={`text-lg !px-6 !py-1 rounded-full cursor-pointer ${
+          className={`text-lg !px-6 !py-1 rounded-full cursor-pointer 
+            lg:!text-lg lg:!px-6 lg:!py-1 lg:!rounded-full lg:!cursor-pointer ${
             activeIndex === idx ? "bg-indigo-600 text-white" : ""
           }`}
           onClick={() => setActiveIndex(idx)}
@@ -504,7 +610,8 @@ useEffect(() => {
 
   {/* Main Slider */}
   <div
-    className="ourProcess-mainBox h-[60vh] flex items-center !pl-23 overflow-hidden"
+    className="ourProcess-mainBox h-[60vh] flex  !pl-4 overflow-hidden 
+    lg:!h-[60vh] lg:!pl-23 lg:!flex lg:!items-center lg:!overflow-hidden"
     onMouseDown={startDrag}
     onMouseMove={duringDrag}
     onMouseUp={endDrag}
@@ -515,87 +622,122 @@ useEffect(() => {
   >
     <div
       ref={trackRef}
-      className="flex gap-[32px] transition-transform duration-[1200ms] ease-[cubic-bezier(0.77,0,0.175,1)]"
+      className="flex gap-[22px] transition-transform duration-[1200ms] ease-[cubic-bezier(0.77,0,0.175,1)] 
+      lg:!flex lg:!gap-[32px] lg:!transition-transform lg:!duration-[1200ms] lg:!ease-[cubic-bezier(0.77,0,0.175,1)]"
       style={{
         transform: `translateX(-${activeIndex * (50 + 2.2)}%)`,
         width: "400%",
       }}
     >
       {/* Slide 1 */}
-      <div className="flex-shrink-0 w-[50%] h-[50vh] border-2 rounded-3xl flex justify-between !p-1">
-        <div className="w-[55%] flex flex-col justify-end !pl-5 !pb-5 gap-3">
+      <div className="flex-shrink-0 w-[27.5%] h-[60vh] border-2 rounded-3xl flex flex-col justify-between !px-2 !py-2 overflow-hidden
+      lg:!flex-shrink-0 lg:!w-[50%] lg:!h-[50vh] lg:!border-2 lg:!rounded-3xl lg:!flex lg:!flex-row lg:!justify-between lg:!p-1">
+
+        <div className="w-[100%] flex flex-col justify-end !pl-5 !pb-5 gap-3 
+            lg:!w-[55%] lg:!flex lg:!flex-col lg:!justify-end lg:!pl-5 lg:!pb-5 lg:!gap-3">
           <div className="text-md">Discovery</div>
           <div className="text-4xl w-full uppercase">
             In-depth research to understand your goals, audience, and market.
           </div>
         </div>
-        <div className="!w-[45%] !h-[100%]  !bg-blue-900 rounded-3xl relative overflow-hidden">
+        <div className="!w-[100%] !h-[100%]  !bg-blue-900 rounded-3xl relative overflow-hidden
+        lg:!w-[45%] lg:!h-[100%]  lg:!bg-blue-900 lg:!rounded-3xl lg:!relative lg:!overflow-hidden">
           <img src={discoveryImg} alt="" />
-          <div className="ourProcessImgAnimation h-[100%] w-[100%] bg-green-500 absolute" >
+          <div className="ourProcessImgAnimation h-[100%] w-[100%] bg-green-500 absolute
+          lg:!h-[100%] lg:!w-[100%] lg:!bg-green-500 lg:!absolute" >
             
           </div>
         </div>
       </div>
 
       {/* Slide 2 */}
-      <div className="flex-shrink-0 w-[50%] h-[50vh] border-2 rounded-3xl flex justify-between !p-1">
-        <div className="w-[55%] flex flex-col justify-end !pl-5 !pb-5 gap-3">
-          <div className="text-md">Design & Development</div>
-          <div className="text-4xl w-full uppercase">
+      <div className="flex-shrink-0 w-[27.5%] h-[60vh] border-2 rounded-3xl flex flex-col justify-between !px-2 !py-2 overflow-hidden
+      lg:!flex-shrink-0 lg:!w-[50%] lg:!h-[50vh] lg:!border-2 lg:!rounded-3xl lg:!flex  lg:!flex-row lg:!justify-between lg:!p-1">
+
+        <div className="w-[100%] flex flex-col justify-end !pl-5 !pb-5 gap-3 
+            lg:!w-[55%] lg:!flex lg:!flex-col lg:!justify-end lg:!pl-5 lg:!pb-5 lg:!gap-3">
+
+          <div className="text-md
+          lg:!text-md">Design & Development</div>
+          <div className="text-4xl w-full uppercase
+          lg:!text-4xl lg:!w-full lg:!uppercase">
             Creating modern, responsive, and user-friendly websites.
           </div>
         </div>
-        <div className="!w-[45%] !h-[100%]  !bg-blue-900 rounded-3xl relative overflow-hidden">
+        <div className="!w-[100%] !h-[100%]  !bg-blue-900 rounded-3xl relative overflow-hidden
+        lg:!w-[45%] lg:!h-[100%]  lg:!bg-blue-900 lg:!rounded-3xl lg:!relative lg:!overflow-hidden">
           <img src={designNDevImg} alt="" />
-          <div className="ourProcessImgAnimation h-[100%] w-[100%] bg-green-500 absolute" >
+          <div className="ourProcessImgAnimation h-[100%] w-[100%] bg-green-500 absolute
+          lg:!h-[100%] lg:!w-[100%] lg:!bg-green-500 lg:!absolute" >
             
           </div>
         </div>
       </div>
 
       {/* Slide 3 */}
-     <div className="flex-shrink-0 w-[50%] h-[50vh] border-2 rounded-3xl flex justify-between !p-1">
-        <div className="w-[55%] flex flex-col justify-end !pl-5 !pb-5 gap-3">
-          <div className="text-md">Full cycle testing</div>
-          <div className="text-4xl w-full uppercase">
+     <div className="flex-shrink-0 w-[27.5%] h-[60vh] border-2 rounded-3xl flex flex-col justify-between !px-2 !py-2 overflow-hidden
+      lg:!flex-shrink-0 lg:!w-[50%] lg:!h-[50vh] lg:!border-2 lg:!rounded-3xl lg:!flex lg:!flex-row lg:!justify-between lg:!p-1">
+        <div className="w-[100%] flex flex-col justify-end !pl-5 !pb-5 gap-3 
+            lg:!w-[55%] lg:!flex lg:!flex-col lg:!justify-end lg:!pl-5 lg:!pb-5 lg:!gap-3">
+
+          <div className="text-md
+          lg:!text-md">Full cycle testing</div>
+          <div className="text-4xl w-full uppercase
+          lg:!text-4xl lg:!w-full lg:!uppercase">
             Ensuring flawless performance, security, and usability.
           </div>
         </div>
-        <div className="!w-[45%] !h-[100%]  !bg-blue-900 rounded-3xl relative overflow-hidden">
+        <div className="!w-[100%] !h-[100%]  !bg-blue-900 rounded-3xl relative overflow-hidden
+        lg:!w-[45%] lg:!h-[100%]  lg:!bg-blue-900 lg:!rounded-3xl lg:!relative lg:!overflow-hidden">
           <img src={fullCycleTestingImg} alt="" />
-          <div className="ourProcessImgAnimation h-[100%] w-[100%] bg-green-500 absolute" >
+          <div className="ourProcessImgAnimation h-[100%] w-[100%] bg-green-500 absolute
+          lg:!h-[100%] lg:!w-[100%] lg:!bg-green-500 lg:!absolute" >
             
           </div>
         </div>
       </div>
 
       {/* Slide 4 */}
-     <div className="flex-shrink-0 w-[50%] h-[50vh] border-2 rounded-3xl flex justify-between !p-1">
-        <div className="w-[55%] flex flex-col justify-end !pl-5 !pb-5 gap-3">
-          <div className="text-md">Implementation</div>
-          <div className="text-4xl w-full uppercase">
+     <div className="flex-shrink-0 w-[27.5%] h-[60vh] border-2 rounded-3xl flex flex-col justify-between !px-2 !py-2 overflow-hidden
+      lg:!flex-shrink-0 lg:!w-[50%] lg:!h-[50vh] lg:!border-2 lg:!rounded-3xl lg:!flex lg:!flex-row lg:!justify-between lg:!p-1">
+        <div className="w-[100%] flex flex-col justify-end !pl-5 !pb-5 gap-3 
+            lg:!w-[55%] lg:!flex lg:!flex-col lg:!justify-end lg:!pl-5 lg:!pb-5 lg:!gap-3">
+
+          <div className="text-md
+          lg:!text-md">Implementation</div>
+          <div className="text-4xl w-full uppercase
+          lg:!text-4xl lg:!w-full lg:!uppercase">
             Seamless launch with optimized setup and integrations.
           </div>
         </div>
-        <div className="!w-[45%] !h-[100%]  !bg-blue-900 rounded-3xl relative overflow-hidden">
+        <div className="!w-[100%] !h-[100%]  !bg-blue-900 rounded-3xl relative overflow-hidden
+        lg:!w-[45%] lg:!h-[100%]  lg:!bg-blue-900 lg:!rounded-3xl lg:!relative lg:!overflow-hidden">
           <img src={implementationImg} alt=""  className='' />
-          <div className="ourProcessImgAnimation h-[100%] w-[100%] bg-green-500 absolute" >
+          <div className="ourProcessImgAnimation h-[100%] w-[100%] bg-green-500 absolute
+          lg:!h-[100%] lg:!w-[100%] lg:!bg-green-500 lg:!absolute" >
             
           </div>
         </div>
       </div>
 
       {/* Slide 5 */}
-     <div className="flex-shrink-0 w-[50%] h-[50vh] border-2 rounded-3xl flex justify-between !p-1">
-        <div className="w-[55%] flex flex-col justify-end !pl-5 !pb-5 gap-3">
-          <div className="text-md">Maintanace</div>
-          <div className="text-4xl w-full uppercase">
+     <div className="flex-shrink-0 w-[27.5%] h-[60vh] border-2 rounded-3xl flex flex-col justify-between !px-2 !py-2 overflow-hidden
+      lg:!flex-shrink-0 lg:!w-[50%] lg:!h-[50vh] lg:!border-2 lg:!rounded-3xl lg:!flex lg:!flex-row lg:!justify-between lg:!p-1">
+        <div className="w-[100%] flex flex-col justify-end !pl-5 !pb-5 gap-3 
+            lg:!w-[55%] lg:!flex lg:!flex-col lg:!justify-end lg:!pl-5 lg:!pb-5 lg:!gap-3">
+
+          <div className="text-md
+          lg:!text-md">Maintanace</div>
+          <div className="text-4xl w-full uppercase
+          lg:!text-4xl lg:!w-full lg:!uppercase">
             Continuous updates, support, and performance monitoring.
           </div>
         </div>
-        <div className="!w-[45%] !h-[100%]  !bg-blue-900 rounded-3xl relative overflow-hidden">
+        <div className="!w-[100%] !h-[100%]  !bg-blue-900 rounded-3xl relative overflow-hidden
+        lg:!w-[45%] lg:!h-[100%]  lg:!bg-blue-900 lg:!rounded-3xl lg:!relative lg:!overflow-hidden">
           <img className='' src={maintainaceImg} alt="" />
-          <div className="ourProcessImgAnimation h-[100%] w-[100%] bg-green-500 absolute" >
+          <div className="ourProcessImgAnimation h-[100%] w-[100%] bg-green-500 absolute
+          lg:!h-[100%] lg:!w-[100%] lg:!bg-green-500 lg:!absolute" >
             
           </div>
         </div>
@@ -899,7 +1041,7 @@ useEffect(() => {
 
         </div>
 
-      <Footer />
+      
         
       
             

@@ -23,18 +23,18 @@ function Footer() {
             <div className="onlineLinks w-[45%] h-[35%] flex flex-col items-end md:!items-start md:flex md:flex-col">
               <h1 className='foothead'>online</h1>
               <p className='iaminsta !mt-2'>instagram</p>
-              <p className='ia!mlinked'>linkedin</p>
+              <p className='iamlinked'>linkedin</p>
             </div>
 
             <div className="locations w-[15%] h-[55%] flex flex-col !ml-80 !pr-1 md:!mr-85 md:!mt-5 items-end md:items-start relative overflow-visible">
-              <h1 className="foothead mb-4 text-lg font-bold">Location</h1>
+              <h1 className="foothead mb-4 ">Location</h1>
               
               {/* America */}
               <div className="location-item group relative cursor-pointer mb-3">
                 <p className="iamAmerica rounded-md transition-all duration-300 hover:-translate-x-1">
                   America
                 </p>
-                <div className="subLocationAmerica absolute left-full top-0 !ml-3 bg-gradient-to-r rounded-lg p-4 shadow-xl min-w-[160px] z-20 
+                <div className="iamSubLocations subLocationAmerica absolute left-full top-0 !ml-3 bg-gradient-to-r rounded-lg p-4  min-w-[160px] z-20 
                                 opacity-0 invisible translate-x-6 group-hover:opacity-100 group-hover:visible group-hover:translate-x-2 
                                 transition-all duration-500 ease-out">
                   {/* CORRECTED: Use string path instead of component */}
@@ -44,8 +44,8 @@ function Footer() {
                   >
                     Tempa
                   </Link>
-                  <p className="!py-2 !px-3 rounded-md transition-all duration-200 !ml hover:translate-x-1 font-medium cursor-pointer">Los Angeles</p>
-                  <p className="!py-2 !px-3 rounded-md transition-all duration-200 !ml hover:translate-x-1 font-medium cursor-pointer">Texas</p>
+                  <p className="iamSubLocations !py-2 !px-3 rounded-md transition-all duration-200 !ml hover:translate-x-1 font-medium cursor-pointer">Los Angeles</p>
+                  <p className="iamSubLocations !py-2 !px-3 rounded-md transition-all duration-200 !ml hover:translate-x-1 font-medium cursor-pointer">Texas</p>
                 </div>
               </div>
 
@@ -54,12 +54,12 @@ function Footer() {
                 <p className="iamIndia rounded-md transition-all duration-300 hover:-translate-x-1">
                   India
                 </p>
-                <div className="subLocationIndia absolute left-full top-0 !ml-3 bg-gradient-to-r rounded-lg p-4 shadow-xl min-w-[160px] z-20 
+                <div className="subLocationIndia absolute left-full top-0 !ml-3 bg-gradient-to-r rounded-lg p-4  min-w-[160px] z-20 
                                 opacity-0 invisible translate-x-6 group-hover:opacity-100 group-hover:visible group-hover:translate-x-2 
                                 transition-all duration-500 ease-out">
-                  <p className="!py-2 !px-3 rounded-md transition-all duration-200 !ml hover:translate-x-1 font-medium cursor-pointer">Mumbai</p>
-                  <p className="!py-2 !px-3 rounded-md transition-all duration-200 !ml hover:translate-x-1 font-medium cursor-pointer">Bangalore</p>
-                  <p className="!py-2 !px-3 rounded-md transition-all duration-200 !ml hover:translate-x-1 font-medium cursor-pointer">Delhi</p>
+                  <p className="iamSubLocations !py-2 !px-3 rounded-md transition-all duration-200 !ml hover:translate-x-1 font-medium cursor-pointer">Mumbai</p>
+                  <p className="iamSubLocations !py-2 !px-3 rounded-md transition-all duration-200 !ml hover:translate-x-1 font-medium cursor-pointer">Bangalore</p>
+                  <p className="iamSubLocations !py-2 !px-3 rounded-md transition-all duration-200 !ml hover:translate-x-1 font-medium cursor-pointer">Delhi</p>
                 </div>
               </div>
 
@@ -68,12 +68,12 @@ function Footer() {
                 <p className="iamUk rounded-md transition-all duration-300 hover:-translate-x-1">
                   UK
                 </p>
-                <div className="subLocationUk absolute left-full top-0 !ml-3 bg-gradient-to-r rounded-lg p-4 shadow-xl min-w-[160px] z-20 
+                <div className="subLocationUk absolute left-full top-0 !ml-3 bg-gradient-to-r rounded-lg p-4  min-w-[160px] z-20 
                                 opacity-0 invisible translate-x-6 group-hover:opacity-100 group-hover:visible group-hover:translate-x-2 
                                 transition-all duration-500 ease-out">
-                  <p className="!py-2 !px-3 rounded-md transition-all duration-200 !ml hover:translate-x-1 font-medium cursor-pointer">Birmingham</p>
-                  <p className="!py-2 !px-3 rounded-md transition-all duration-200 !ml hover:translate-x-1 font-medium cursor-pointer">Manchester</p>
-                  <p className="!py-2 !px-3 rounded-md transition-all duration-200 !ml hover:translate-x-1 font-medium cursor-pointer">London</p>
+                  <p className="iamSubLocations !py-2 !px-3 rounded-md transition-all duration-200 !ml hover:translate-x-1 font-medium cursor-pointer">Birmingham</p>
+                  <p className="iamSubLocations !py-2 !px-3 rounded-md transition-all duration-200 !ml hover:translate-x-1 font-medium cursor-pointer">Manchester</p>
+                  <p className="iamSubLocations !py-2 !px-3 rounded-md transition-all duration-200 !ml hover:translate-x-1 font-medium cursor-pointer">London</p>
                 </div>
               </div>
             </div>

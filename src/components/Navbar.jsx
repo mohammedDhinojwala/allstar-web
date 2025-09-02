@@ -1,7 +1,6 @@
 import { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { _round } from 'gsap/gsap-core';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,25 +19,17 @@ export default function Navbar() {
     }
   };
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
-  const closeMenu = () => {
-    setIsMenuOpen(false);
-  };
-
-
- 
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const closeMenu = () => setIsMenuOpen(false);
 
   return (
     <header
-  className="nav-main bg-white w-full  font-primary !z-50"
-  ref={navRef}
-  onMouseMove={handleMouseMove}
->
-      <div className="nav-inner  container mx-auto !px-6 !py-5 flex justify-between items-center">
-        {/* Logo - Left */}
+      className="nav-main bg-white w-full font-primary !z-50"
+      ref={navRef}
+      onMouseMove={handleMouseMove}
+    >
+      <div className="nav-inner container mx-auto !px-6 !py-5 flex justify-between items-center">
+        {/* Logo */}
         <Link
           to="/"
           className="nav-logo text-xl font-bold font-accent !ml-2 !md:ml-6 relative z-10"
@@ -47,27 +38,25 @@ export default function Navbar() {
           allstar
         </Link>
 
-        {/* Desktop Navigation - Center */}
-        <nav className=" !hidden md:!flex gap-10 z-50 !mx-4 font-primary">
-          {['work', 'about', 'contact'].map((item) => (
+        {/* Desktop Navigation */}
+        <nav className="!hidden md:!flex gap-10 z-50 !mx-4 font-primary">
+          {['work', 'about', 'contact', 'blog'].map((item) => (
             <div
               key={item}
               className="relative overflow-hidden"
               ref={(el) => (linkRefs.current[item] = el)}
             >
               <Link
-                to={`/${item}`}
+                to={`/${item}`} // Now blog will correctly go to /blog
                 className="nav-links hover:text-gray-600 transition-colors capitalize !px-2 !py-1 relative z-10 block font-secondary"
                 onClick={closeMenu}
                 onMouseEnter={() => setHoveredLink(item)}
                 onMouseLeave={() => setHoveredLink(null)}
               >
-                {/* Regular text */}
                 <span className={`relative z-10 ${hoveredLink === item ? 'opacity-0' : 'opacity-100'}`}>
                   {item}
                 </span>
 
-                {/* Blurred text that follows cursor */}
                 {hoveredLink === item && (
                   <motion.span
                     className="absolute inset-0 blur-xl opacity-100 font-secondary"
@@ -100,8 +89,8 @@ export default function Navbar() {
           ))}
         </nav>
 
-        {/* Instagram Link - Right (Desktop only) */}
-        <div className="nav-insta !hidden md:!block z-50 !mr-2 !md:mr-6 relative overflow-hidden ">
+        {/* Instagram Link */}
+        <div className="nav-insta !hidden md:!block z-50 !mr-2 !md:mr-6 relative overflow-hidden">
           <a
             href="https://instagram.com"
             target="_blank"
@@ -110,35 +99,17 @@ export default function Navbar() {
             onMouseEnter={() => setHoveredLink('instagram')}
             onMouseLeave={() => setHoveredLink(null)}
           >
-            {/* Regular text */}
-            <span className={ `  relative z-10 ${hoveredLink === 'instagram' ? 'opacity-0' : 'opacity-100'}`}>
+            <span className={`relative z-10 ${hoveredLink === 'instagram' ? 'opacity-0' : 'opacity-100'}`}>
               Instagram
             </span>
 
-            {/* Blurred text that follows cursor */}
             {hoveredLink === 'instagram' && (
               <motion.span
                 className="absolute inset-0 blur-xl opacity-100 font-special"
-                initial={{
-                  opacity: 0,
-                  x: mousePosition.x - 20,
-                  y: mousePosition.y - 10
-                }}
-                animate={{
-                  x: mousePosition.x - 20,
-                  y: mousePosition.y - 10,
-                  opacity: 1
-                }}
-                transition={{
-                  type: 'spring',
-                  damping: 20,
-                  stiffness: 300,
-                  mass: 0.5
-                }}
-                style={{
-                  filter: 'blur(8px)',
-                  willChange: 'transform',
-                }}
+                initial={{ opacity: 0, x: mousePosition.x - 20, y: mousePosition.y - 10 }}
+                animate={{ x: mousePosition.x - 20, y: mousePosition.y - 10, opacity: 1 }}
+                transition={{ type: 'spring', damping: 20, stiffness: 300, mass: 0.5 }}
+                style={{ filter: 'blur(8px)', willChange: 'transform' }}
               >
                 Instagram
               </motion.span>
@@ -178,7 +149,7 @@ export default function Navbar() {
               className="flex flex-col items-center justify-center gap-8 !p-6"
               onClick={(e) => e.stopPropagation()}
             >
-              {['work', 'about', 'contact'].map((item) => (
+              {['work', 'about', 'contact', 'blog'].map((item) => (
                 <motion.div
                   key={item}
                   whileHover={{ scale: 1.05 }}

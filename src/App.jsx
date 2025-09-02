@@ -14,6 +14,8 @@ import Planetglass from './components/projects/Planetglass';
 import MusicPlayer from './components/MusicPlayer';
 import TempaFlorida from './components/locations/TempaFlorida';
 import Practise from './components/locations/Practise';
+import HowtoCreateYourPersonalWebsiteBeforeCollegeApps from './components/Blog/HowtoCreateYourPersonalWebsiteBeforeCollegeApps';
+import BlogMain from './components/Blog/BlogMain';
 
 const PageLayout = () => (
   <>
@@ -25,7 +27,6 @@ const PageLayout = () => (
 
 const HomeLayout = () => (
   <>
-    <Navbar />
     <Home />
     <Footer />
   </>
@@ -65,8 +66,12 @@ function App() {
         { path: '/about', element: <About /> },
         { path: '/contacts', element: <Contacts /> },
         { path: '/planetglass', element: <Planetglass /> },
-        { path: '/tempa-florida', element: <TempaFlorida /> }, // Added this route
-        { path: '/practise', element: <Practise /> }, // Also added Practise if needed
+        { path: '/tempa-florida', element: <TempaFlorida /> },
+        { path: '/practise', element: <Practise /> },
+        { path: '/blog', element: <BlogMain /> }, // FIXED ROUTE
+        { path: '/blog/HowtoCreateYourPersonalWebsiteBeforeCollegeApps', element: <HowtoCreateYourPersonalWebsiteBeforeCollegeApps /> },
+        { path: '/how-to-create-your-personal-website-before-college-apps', element: <HowtoCreateYourPersonalWebsiteBeforeCollegeApps /> }
+       
       ],
     },
   ]);

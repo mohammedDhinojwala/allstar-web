@@ -116,9 +116,11 @@ font-weight: 100;
    font-family: poppins;
   font-size: 0.9rem;
 }
-.iamemail, .iampno ,.iaminsta ,.iamlinked{
+.iamemail, .iampno ,.iaminsta ,.iamlinked,.iamAmerica ,.iamIndia,.iamUk, .iamSubLocations{
   font-size: 0.7rem;
 }
+
+
 
 .watermark{
   font-family: kalic-italic;
@@ -137,7 +139,7 @@ font-weight: 100;
 
 .h1-hero-heading{
   font-family: kalice;
-  font-size: 4.2rem;
+
   
 
 
@@ -145,7 +147,7 @@ font-weight: 100;
 
 .hero-left-text, .hero-right-text{
   font-family: suisse;
-  font-size:0.7rem;
+  
 
 
 }
@@ -193,6 +195,11 @@ font-weight: 100;
 
 .p1{
   background-color: rebeccapurple;
+}
+
+.blogMain-header{
+  font-family: kalice;
+
 }
 
 
