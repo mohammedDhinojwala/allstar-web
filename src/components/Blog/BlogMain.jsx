@@ -127,7 +127,22 @@ md:hidden">
    
     </div>
 
-    <div className="blogMain-main-desktop">this is for the desktop</div>
+    <div className="blogMain-main-desktop w-[100vw] h-[100vh] hidden
+    md:!flex md:!flex-col">
+      
+      <div className="blogMain-header bg-red-200 h-[10%] ">
+        <h1 className='text-[4rem] !pl-2'>EXPLORE BLOGS</h1>
+      </div>
+
+      <div className="blog-desktop bg-green-900 h-[90%] w-[100%]">
+    
+      
+
+        </div>
+
+      
+
+    </div>
 
       </div>
     

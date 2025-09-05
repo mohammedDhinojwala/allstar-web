@@ -3,7 +3,7 @@ import React from 'react'
 import heroPagePhoto from '../../assets/images/heropageportfolio.png';
 import File from '../../assets/images/file-folders.jpeg';
 import creativePortfolio from '../../assets/images/creative-portfolio.png';
-import cassette from '../../assets/images/cassette.jpeg';
+import cassette from '../../assets/images/Cassette.jpeg';
 import leadership from '../../assets/images/Leadership.jpeg';
 import frameworksImg from '../../assets/images/framer-wix-square-webflow.png';
 import languages from '../../assets/images/languages.png';
