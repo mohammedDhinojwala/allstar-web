@@ -15,7 +15,7 @@ function HowtoCreateYourPersonalWebsiteBeforeCollegeApps() {
   return (
     <>
 
-      <div className="hero-personal-website-blog w-[100vw] h-[150vh] !mt-10 ">
+      <div className="hero-personal-website-blog w-[100vw] h-[150vh]  !mt-10 ">
 
         <div className="hero-description-pills flex justify-center items-center gap-2   h-[7%]   
         lg:!flex lg:!justify-center lg:!items-center lg:!gap-2  lg:!pr-50  lg:!h-[5%]  ">
@@ -237,7 +237,7 @@ function HowtoCreateYourPersonalWebsiteBeforeCollegeApps() {
           
       </div>
 
-      <div className="nocode-vs-code-main !h-[325vh] flex justify-center  !mt-40
+      <div className="nocode-vs-code-main !h-[515vh] flex justify-center   !mt-40
         lg:!w-[100vw] lg:!h-[310vh]  lg:!flex     lg:!mt-10">
 
         <div className="-4type-personal-website-nocode-vs-code-inner-main w-[95%]   !pl-2 !pt-2
@@ -331,7 +331,7 @@ function HowtoCreateYourPersonalWebsiteBeforeCollegeApps() {
 
         </div>
 
-         <div className="hobiyest-coder-main w-[100vw] h-[210vh] flex justify-center
+         <div className="hobiyest-coder-main w-[100vw] h-[350vh]  flex justify-center
          lg:!h-[205vh] ">
           <div className="hobiyest-coder-inner  w-[95%] h-[100%] !px-5 !pt-6 
            lg:!w-[50%] lg:!h-[100%] lg:!px-5 lg:!pt-5">
@@ -401,7 +401,7 @@ function HowtoCreateYourPersonalWebsiteBeforeCollegeApps() {
                </div>
 
 
-           <div className="potential-bug-main w-[100vw] h-[440vh]   flex justify-center 
+           <div className="potential-bug-main w-[100vw] h-[700vh]   flex justify-center 
           lg:!h-[310vh]">
             <div className="potential-bug-inner  w-[95%] h-[100%] !px-5 !pt-5
            lg:!w-[50%] lg:!h-[100%] lg:!px-5 lg:!pt-5">
@@ -488,7 +488,7 @@ Day 14: Launch!</label>
           </div> 
 
 
-          <div className="costing-section-main w-[100vw] h-[100vh] text-black flex justify-center 
+          <div className="costing-section-main w-[100vw] h-[160vh]  !text-black flex justify-center 
           lg:!h-[80vh]">
 
             <div className="costing-section-inner  w-[95%] h-[100%] !px-5 !pt-5
@@ -552,7 +552,7 @@ Day 14: Launch!</label>
           </div>
 
 
-          <div className="what-to-put-main w-[100vw] h-[260vh] flex justify-center 
+          <div className="what-to-put-main w-[100vw] h-[420vh]   flex justify-center 
           lg:!h-[220vh]">
 
             <div className="costing-section-inner  w-[95%] h-[100%] !px-5 !pt-5
@@ -622,7 +622,7 @@ Day 14: Launch!</label>
           {/* choosing the right developer */}
 
 
-          <div className="choosing-the-right-main w-[100vw] h-[135vh] flex justify-center 
+          <div className="choosing-the-right-main w-[100vw] h-[225vh] flex justify-center 
           lg:!h-[110vh]">
 
             <div className="choosing-the-right-inner  w-[95%] h-[100%] !px-5 !pt-5
@@ -664,7 +664,7 @@ Day 14: Launch!</label>
 
 
 
-          <div className="FAQ-main w-[100vw] h-[210vh] flex justify-center 
+          <div className="FAQ-main w-[100vw] h-[340vh]   flex justify-center 
           lg:!h-[165vh]">
 
 
