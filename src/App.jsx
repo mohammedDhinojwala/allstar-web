@@ -16,6 +16,7 @@ import TempaFlorida from './components/locations/TempaFlorida';
 import Practise from './components/locations/Practise';
 import HowtoCreateYourPersonalWebsiteBeforeCollegeApps from './components/Blog/HowtoCreateYourPersonalWebsiteBeforeCollegeApps';
 import BlogMain from './components/Blog/BlogMain';
+import WebGrowth from './components/Blog/WebGrowth';
 
 const PageLayout = () => (
   <>
@@ -69,8 +70,8 @@ function App() {
         { path: '/tempa-florida', element: <TempaFlorida /> },
         { path: '/practise', element: <Practise /> },
         { path: '/blog', element: <BlogMain /> }, // FIXED ROUTE
-        { path: '/blog/HowtoCreateYourPersonalWebsiteBeforeCollegeApps', element: <HowtoCreateYourPersonalWebsiteBeforeCollegeApps /> },
-        { path: '/how-to-create-your-personal-website-before-college-apps', element: <HowtoCreateYourPersonalWebsiteBeforeCollegeApps /> }
+        { path: '/blog/HowtoCreateYourPersonalWebsiteBeforeCollegeApps', element: <WebGrowth /> },
+        { path: '/how-to-create-your-personal-website-before-college-apps', element: <WebGrowth />  }
        
       ],
     },

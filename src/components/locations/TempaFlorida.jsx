@@ -432,16 +432,16 @@ useEffect(() => {
     </div>
 
 
-        <div className="servicePage-tempaFlorida h-[100vh] w-[100vw]  relative flex flex-col items-center !mt-10 bg-red-800
-        lg:!h-[210vh] lg:!w-[100vw]  lg:!relative lg:!flex lg:!flex-col lg:!items-center lg:!mt-10 lg:!bg-red-800"
+        <div className="servicePage-tempaFlorida h-[100vh] w-[100vw]  relative flex flex-col items-center !mt-10 
+        lg:!h-[210vh] lg:!w-[100vw]  lg:!relative lg:!flex lg:!flex-col lg:!items-center lg:!mt-10 lg:!"
       style={{
         perspective: "1000px",
         perspectiveOrigin: "50% 50%",
       }}
     >
       {/* HEADER */}
-    <div className="servicePage-header h-[40vh] w-[100vw] flex flex-col justify-start items-start !pt-25 bg-amber-900 !pl-5
-    lg:!h-[80vh] lg:!w-[100vw] lg:!flex lg:!flex-col lg:!justify-start lg:!items-center lg:!bg-amber-200">
+    <div className="servicePage-header h-[40vh] w-[100vw] flex flex-col justify-start items-start !pt-25  !pl-5
+    lg:!h-[80vh] lg:!w-[100vw] lg:!flex lg:!flex-col lg:!justify-start lg:!items-center ">
       <h1 ref={headerRef} className="!text-[3rem] text-start !font-semibold
       lg:!text-[7rem] lg:!text-center lg:!font-semibold">
         Find the service you need
@@ -486,8 +486,8 @@ useEffect(() => {
           >
             {/* inner wrapper: counter-rotate so text remains flat */}
             <div
-              className="w-full h-full flex flex-col items-center justify-start bg-pink-400
-              lg:!w-full lg:!h-full lg:!flex lg:!flex-col lg:!items-center  lg:!bg-green-400"
+              className="w-full h-full flex flex-col items-center justify-start 
+              lg:!w-full lg:!h-full lg:!flex lg:!flex-col lg:!items-center "
               style={{
                 transform: childTransform,
                 transformOrigin: "top center",
@@ -519,7 +519,7 @@ useEffect(() => {
 {/*service for the mobile   */}
 
    <div
-      className="servicePage-mobile-tempaFlorida min-w-[100%] h-[100%] bg-amber-50 !my-2 !mx-2 flex overflow-x-scroll md:!hidden"
+      className="servicePage-mobile-tempaFlorida min-w-[100%] h-[100%]  !my-2 !mx-2 flex overflow-x-scroll md:!hidden"
       ref={sliderRef}
       onMouseDown={handleMouseDown}
       onMouseLeave={handleMouseLeave}
@@ -527,7 +527,7 @@ useEffect(() => {
       onMouseMove={handleMouseMove}
     >
       {/* Service Box 1 */}
-      <div className="serviceBox1 bg-pink-200 w-[55%] h-[65%] !mt-10 !ml-5 !p-1 flex-shrink-0">
+      <div className="serviceBox1  w-[55%] h-[65%] !mt-10 !ml-5 !p-1 flex-shrink-0">
         <div className="serviceBox-header w-[100%] h-[45%] !py-5 !px-3">
           <h1 className="text-white text-[3rem] leading-13 font-extrabold">Brand Strategy</h1>
         </div>
