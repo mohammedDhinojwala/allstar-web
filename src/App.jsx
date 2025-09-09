@@ -70,8 +70,8 @@ function App() {
         { path: '/tempa-florida', element: <TempaFlorida /> },
         { path: '/practise', element: <Practise /> },
         { path: '/blog', element: <BlogMain /> }, // FIXED ROUTE
-        { path: '/blog/HowtoCreateYourPersonalWebsiteBeforeCollegeApps', element: <WebGrowth /> },
-        { path: '/how-to-create-your-personal-website-before-college-apps', element: <WebGrowth />  }
+        { path: '/web-growth', element: <WebGrowth /> },
+        { path: '/how-to-create-your-personal-website-before-college-apps', element: <HowtoCreateYourPersonalWebsiteBeforeCollegeApps/>  }
        
       ],
     },

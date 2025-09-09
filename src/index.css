@@ -139,10 +139,6 @@ font-weight: 100;
 
 .h1-hero-heading{
   font-family: kalice;
-
-  
-
-
 }
 
 .hero-left-text, .hero-right-text{
@@ -209,4 +205,16 @@ font-weight: 100;
   .animate-spin-slow {
     animation: spin 4s linear infinite;
   }
+}
+
+/* blog */
+
+.blog-desktop-intro , .blog-desktop-title{
+  font-family: kalice;
+}
+.blog-desktop-number{
+  font-family: poppins;
+}
+.blog-desktop-discription{
+  font-family: suisse;
 }
