@@ -219,7 +219,7 @@ function Planetglass() {
       style={{
         flex: '0 0 100vw',
         height: '100vh',
-        scrollSnapAlign: 'start',
+        scrollSnapAlign: '',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center'

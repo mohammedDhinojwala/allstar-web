@@ -145,7 +145,7 @@ md:hidden">
     <h1>EXPLORE BLOGS</h1>
   </div>
 
-  <p className=' blog-desktop-intro  !mt-10 !px-20 text-center text-[1.8rem]'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet maxime officia, earum quod in consequuntur incidunt voluptatum eaque consequatur nihil minima. Earum beatae omnis, eaque cum vero eum corporis blanditiis obcaecati adipisci impedit eligendi asperiores laudantium recusandae sint maiores itaque possimus alias esse porro, iusto quibusdam id. Quis, dignissimos eveniet.</p>
+  <p className=' blog-desktop-intro  !mt-10 !px-20 text-center text-[1.8rem]'>Level up your web game without the fluff. Dive into bite-sized, battle-tested guides on SEO, web growth, Core Web Vitals, and content clusters. Skim smart checklists, copy frameworks, and 90‑day roadmaps that turn clicks into compounding wins. Explore featured pillars, filter by topic, or search for exactly what’s needed. Faster pages, cleaner structure, stronger rankings—served with clarity, momentum, and just enough flair to keep learning fun. Let’s build something that scales.</p>
 
   {blogs.map((blog, index) => (
 
