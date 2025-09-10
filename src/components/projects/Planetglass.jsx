@@ -204,12 +204,12 @@ function Planetglass() {
   className="horizontal-scroll-container"
   style={{
     height: '100vh',
-    width: `${images.length * 100}vw`,
     display: 'flex',
     flexWrap: 'nowrap',
-    overflowX: 'auto',
-    scrollSnapType: '',
-    WebkitOverflowScrolling: ''
+    overflowX: 'scroll',
+    overflowY: 'hidden',
+    scrollSnapType: 'x mandatory',
+    WebkitOverflowScrolling: 'touch',
   }}
 >
   {images.map((image, index) => (
@@ -217,9 +217,9 @@ function Planetglass() {
       key={image.id}
       className="horizontal-image-section"
       style={{
-        flex: '0 0 100vw',
+        minWidth: '100%',
         height: '100vh',
-        scrollSnapAlign: '',
+        scrollSnapAlign: 'start',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center'
