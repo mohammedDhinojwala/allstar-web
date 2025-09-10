@@ -208,8 +208,8 @@ function Planetglass() {
     display: 'flex',
     flexWrap: 'nowrap',
     overflowX: 'auto',
-    scrollSnapType: 'x mandatory',
-    WebkitOverflowScrolling: 'touch'
+    scrollSnapType: '',
+    WebkitOverflowScrolling: ''
   }}
 >
   {images.map((image, index) => (
