@@ -218,3 +218,12 @@ font-weight: 100;
 .blog-desktop-discription{
   font-family: suisse;
 }
+
+h1,h4,p,.p,li,.table-content{
+  font-family: kalice;
+}
+
+h2,h3{
+
+  font-family: kalic-italic;
+}

@@ -17,6 +17,8 @@ import Practise from './components/locations/Practise';
 import HowtoCreateYourPersonalWebsiteBeforeCollegeApps from './components/Blog/HowtoCreateYourPersonalWebsiteBeforeCollegeApps';
 import BlogMain from './components/Blog/BlogMain';
 import WebGrowth from './components/Blog/WebGrowth';
+import BestCMSForSeoIn2025 from './components/Blog/BestCMSForSeoIn2025';
+
 
 const PageLayout = () => (
   <>
@@ -71,7 +73,8 @@ function App() {
         { path: '/practise', element: <Practise /> },
         { path: '/blog', element: <BlogMain /> }, // FIXED ROUTE
         { path: '/web-growth', element: <WebGrowth /> },
-        { path: '/how-to-create-your-personal-website-before-college-apps', element: <HowtoCreateYourPersonalWebsiteBeforeCollegeApps/>  }
+        { path: '/how-to-create-your-personal-website-before-college-apps', element: <HowtoCreateYourPersonalWebsiteBeforeCollegeApps/>  },
+        { path: '/Best-CMS-for-seo-in-2025', element: <BestCMSForSeoIn2025 />  }
        
       ],
     },

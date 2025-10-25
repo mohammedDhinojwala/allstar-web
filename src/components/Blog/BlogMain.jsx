@@ -10,10 +10,10 @@ function BlogMain() {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
    const blogs = [
-    { id: 1, link:"/how-to-create-your-personal-website-before-college-apps", color: "bg-gray-100", top: "top-[38%]", title: "How to create Your personal website before college apps", description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet maxime officia, earum quod in consequuntur incidunt voluptatum eaque consequatur nihil minima. Earum beatae omnis, eaque cum vero eum corporis blanditiis obcaecati adipisci impedit eligendi asperiores laudantium recusandae sint maiores itaque possimus alias esse porro, iusto quibusdam id. Quis, dignissimos eveniet.", pills: ["web", "portfolio", "job"], image: blog1heroPagePhoto },
+    { id: 1, link:"/Best-CMS-for-seo-in-2025", color: "bg-gray-100", top: "top-[38%]", title: "How to create Your personal website before college apps", description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet maxime officia, earum quod in consequuntur incidunt voluptatum eaque consequatur nihil minima. Earum beatae omnis, eaque cum vero eum corporis blanditiis obcaecati adipisci impedit eligendi asperiores laudantium recusandae sint maiores itaque possimus alias esse porro, iusto quibusdam id. Quis, dignissimos eveniet.", pills: ["web", "portfolio", "job"], image: blog1heroPagePhoto },
     { id: 2, link:"/web-growth", color: "bg-gray-50", top: "top-[42%]", title: "How to create Your personal website before college apps", description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet maxime officia, earum quod in consequuntur incidunt voluptatum eaque consequatur nihil minima. Earum beatae omnis, eaque cum vero eum corporis blanditiis obcaecati adipisci impedit eligendi asperiores laudantium recusandae sint maiores itaque possimus alias esse porro, iusto quibusdam id. Quis, dignissimos eveniet.", pills: ["web", "portfolio", "job"], image: blog2heroPagePhoto },
-    { id: 3, link:"/how-to-create-your-personal-website-before-college-apps", color: "bg-gray-100", top: "top-[46%]", title: "How to create Your personal website before college apps", description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet maxime officia, earum quod in consequuntur incidunt voluptatum eaque consequatur nihil minima. Earum beatae omnis, eaque cum vero eum corporis blanditiis obcaecati adipisci impedit eligendi asperiores laudantium recusandae sint maiores itaque possimus alias esse porro, iusto quibusdam id. Quis, dignissimos eveniet.", pills: ["web", "portfolio", "job"], image: blog3heroPagePhoto },
-    { id: 4, link:"/how-to-create-your-personal-website-before-college-apps", color: "bg-gray-50", top: "top-[50%]", title: "How to create Your personal website before college apps", description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet maxime officia, earum quod in consequuntur incidunt voluptatum eaque consequatur nihil minima. Earum beatae omnis, eaque cum vero eum corporis blanditiis obcaecati adipisci impedit eligendi asperiores laudantium recusandae sint maiores itaque possimus alias esse porro, iusto quibusdam id. Quis, dignissimos eveniet.", pills: ["web", "portfolio", "job"], image: blog1heroPagePhoto },
+    // { id: 3, link:"/Best_cms_for_seo_in_2025", color: "bg-gray-100", top: "top-[46%]", title: "How to create Your personal website before college apps", description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet maxime officia, earum quod in consequuntur incidunt voluptatum eaque consequatur nihil minima. Earum beatae omnis, eaque cum vero eum corporis blanditiis obcaecati adipisci impedit eligendi asperiores laudantium recusandae sint maiores itaque possimus alias esse porro, iusto quibusdam id. Quis, dignissimos eveniet.", pills: ["web", "portfolio", "job"], image: blog3heroPagePhoto },
+    // { id: 4, link:"/how-to-create-your-personal-website-before-college-apps", color: "bg-gray-50", top: "top-[50%]", title: "How to create Your personal website before college apps", description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet maxime officia, earum quod in consequuntur incidunt voluptatum eaque consequatur nihil minima. Earum beatae omnis, eaque cum vero eum corporis blanditiis obcaecati adipisci impedit eligendi asperiores laudantium recusandae sint maiores itaque possimus alias esse porro, iusto quibusdam id. Quis, dignissimos eveniet.", pills: ["web", "portfolio", "job"], image: blog1heroPagePhoto },
     // { id: 2, color: "bg-amber-200", top: "top-[35%]" },
     // { id: 3, color: "bg-amber-400", top: "top-[40%]" },
     // { id: 4, color: "bg-amber-500", top: "top-[45%]" },
@@ -24,8 +24,7 @@ function BlogMain() {
     <div>
       <div className="body w-[100vw] h-[200vh] ">
 
-<div className="blogMain-main-mobile w-[100vw] h-[100vh] 
-md:hidden">
+<div className="blogMain-main-mobile w-[100vw] h-[100vh] flex-col  lg:hidden">
 
         <div className="blogMain-header w-[100%] h-[12%]  flex justify-center items-center text-[1.7rem]">
             <h1>EXPLORE BLOGS</h1>
@@ -140,8 +139,8 @@ md:hidden">
    
     </div>
 
-    <div className="blog-desktop  h-[90%] w-full relative">
-  <div className="blogMain-header w-full h-[9%]  flex justify-center items-center text-[5rem]">
+    <div className="blog-desktop  h-[90%] w-full  :!flex-col lg:relative">
+  <div className="blogMain-header w-full h-[9%] flex justify-center items-center text-[5rem] ">
     <h1>EXPLORE BLOGS</h1>
   </div>
 
